@@ -8,7 +8,7 @@
 #GUI FILE
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-from ui_main import Ui_MainWindow
+import ui_main
 from QtGui import QColor, QGraphics, QSizeGrip
 
 

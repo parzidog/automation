@@ -2,18 +2,17 @@
 
 import sys
 import platform
+import ui_functions
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime,
-                          QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
-from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase,
-                         QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
+from PyQt5.QtCore import QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent
+from PyQt5.QtGui import QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient
 from PyQt5.QtWidgets import *
 
 # GUI FILE
 from ui_main import Ui_MainWindow
 
-# IMPORT FUNCTIONS
-from ui_functions import *
+# # IMPORT FUNCTIONS
+# from ui_functions import *
 
 
 class MainWindow(QMainWindow):
