@@ -16,7 +16,7 @@ driver.implicitly_wait(4)
 username = driver.find_element(By.XPATH, '//*[@id="userName"]')
 username.click()
 #Enter new username
-#text = "kenneth_wf"   
+#text = "kenneth_wf"
 for character in text:
     username.send_keys(character)
     time.sleep(0.1) # pause for 0.3 seconds("kenneth_wf")
@@ -25,7 +25,7 @@ driver.implicitly_wait(1)
 
 password = driver.find_element(By.XPATH, '//*[@id="Password"]')
 password.click()
-text = "Storage1!"
+#text = "Storage1!"
 for character in text:
     password.send_keys(character)
     time.sleep(0.1) # pause for 0.3 seconds
@@ -67,3 +67,55 @@ fromDays.send_keys("999")
 fromDays.send_keys(Keys.ENTER)
 
 driver.switch_to.window(driver.window_handles[-1])
+
+#Next Worksheet
+
+# collectionWorksheet = driver.find_element(By.XPATH, '//*[@id="reportsListWidget"]/div/div[1]/div/ul/li[4]/a')
+# ActionChains(driver) \
+#     .key_down(Keys.CONTROL) \
+#     .key_down(Keys.SHIFT) \
+#     .click(collectionWorksheet) \
+#     .key_up(Keys.CONTROL) \
+#     .key_up(Keys.SHIFT) \
+#     .perform()
+#
+# driver.switch_to.window(driver.window_handles[1])
+#
+# fromDays = driver.find_element(By.XPATH, '//*[@id="ReportArguments_FromDaysLate"]')
+# fromDays.click()
+# fromDays.clear()
+# fromDays.send_keys("1")
+#
+# fromDays = driver.find_element(By.XPATH, '//*[@id="ReportArguments_ToDaysLate"]')
+# fromDays.click()
+# fromDays.clear()
+# fromDays.send_keys("999")
+# fromDays.send_keys(Keys.ENTER)
+#
+# driver.switch_to.window(driver.window_handles[-1])
+
+# #Final Worksheet
+#
+# collectionWorksheet = driver.find_element(By.XPATH, '//*[@id="reportsListWidget"]/div/div[1]/div/ul/li[4]/a')
+# ActionChains(driver) \
+#     .key_down(Keys.CONTROL) \
+#     .key_down(Keys.SHIFT) \
+#     .click(collectionWorksheet) \
+#     .key_up(Keys.CONTROL) \
+#     .key_up(Keys.SHIFT) \
+#     .perform()
+#
+# driver.switch_to.window(driver.window_handles[1])
+#
+# fromDays = driver.find_element(By.XPATH, '//*[@id="ReportArguments_FromDaysLate"]')
+# fromDays.click()
+# fromDays.clear()
+# fromDays.send_keys("1")
+#
+# fromDays = driver.find_element(By.XPATH, '//*[@id="ReportArguments_ToDaysLate"]')
+# fromDays.click()
+# fromDays.clear()
+# fromDays.send_keys("999")
+# fromDays.send_keys(Keys.ENTER)
+#
+# driver.switch_to.window(driver.window_handles[-1])
