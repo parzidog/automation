@@ -1,4 +1,6 @@
 
+# CREATOR: KENNETH A SCHAEFER II
+# V:0.0.7
 
 import sys
 import platform

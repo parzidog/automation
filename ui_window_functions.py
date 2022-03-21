@@ -1,6 +1,6 @@
 
 # CREATOR: KENNETH A SCHAEFER II
-# V:0.0.1
+# V:0.0.7
 
 from PyQt5.QtGui import QColor
 
