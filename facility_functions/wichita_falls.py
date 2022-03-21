@@ -15,7 +15,8 @@ driver.implicitly_wait(4)
 
 username = driver.find_element(By.XPATH, '//*[@id="userName"]')
 username.click()
-text = "kenneth_wf"
+#Enter new username
+#text = "kenneth_wf"   
 for character in text:
     username.send_keys(character)
     time.sleep(0.1) # pause for 0.3 seconds("kenneth_wf")
