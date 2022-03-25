@@ -6,8 +6,7 @@ import sys
 import platform
 import PyQt5
 from PyQt5 import QtCore, QtWidgets  # , QtGui
-from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime,
-                            QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
+from PyQt5.QtCore import QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent
 #from PyQt5 import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
 
@@ -50,6 +49,9 @@ class MainWindow(QMainWindow):
     ########################################################################
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
+
+    def buttonClick(self, event):
+        self.ui.
 
 
 if __name__ == "__main__":

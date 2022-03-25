@@ -302,7 +302,7 @@ QPushButton:hover {
                       <string>Close</string>
                      </property>
                      <property name="toolTipDuration">
-                      <number>26</number>
+                      <number>1</number>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
