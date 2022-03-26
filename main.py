@@ -50,8 +50,8 @@ class MainWindow(QMainWindow):
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
 
-    def buttonClick(self, event):
-        self.ui.
+    # def buttonClick(self, event):
+    #     self.ui.
 
 
 if __name__ == "__main__":
