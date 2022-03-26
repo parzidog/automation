@@ -15,6 +15,7 @@ from ui_main import Ui_MainWindow
 
 # IMPORT FUNCTIONS
 from ui_window_functions import *
+from wichita_falls_fun import *
 
 
 class MainWindow(QMainWindow):
@@ -50,8 +51,12 @@ class MainWindow(QMainWindow):
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
 
-    # def buttonClick(self, event):
-    #     self.ui.
+    ##APP FUNCTIONS
+    def appFunctions(self):  # , wichita_falls_fun):
+        self.wichita_falls.clicked.connect(self.clickme.WF)
+
+    def clickme(self, wichita_falls_fun):
+        WF = wichita_falls_fun
 
 
 if __name__ == "__main__":
