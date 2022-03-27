@@ -1,10 +1,16 @@
 import time
+import platform
 
 from selenium import webdriver
-
 from selenium.webdriver.chrome.service import Service
 
-service = Service('"D:\chromedriver.exe"')
+op_sys = platform.system()
+
+if(op_sys == Darwin):
+    service = 
+
+else()
+    service = Service('"D:\chromedriver.exe"')
 
 service.start()
 
