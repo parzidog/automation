@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-driver = webdriver.Chrome('../chromedriver')
+driver = webdriver.Chrome('chromedriver')
 
 driver.get("https://www.webselfstorage.com/SignIn")
 driver.maximize_window()
