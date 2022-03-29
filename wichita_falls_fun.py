@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-driver = webdriver.Chrome('../chromedriver')
+driver = webdriver.Chrome('./chromedriver.exe')
 
 driver.get("https://www.webselfstorage.com/SignIn")
 driver.maximize_window()
@@ -56,7 +56,9 @@ ActionChains(driver) \
     .key_up(Keys.SHIFT) \
     .perform()
 
+driver.implicitly_wait(1)
 driver.switch_to.window(driver.window_handles[1])
+driver.implicitly_wait(1)
 
 fromDays = driver.find_element(
     By.XPATH, '//*[@id="ReportArguments_FromDaysLate"]')
@@ -85,6 +87,8 @@ ActionChains(driver) \
     .key_up(Keys.SHIFT) \
     .perform()
 
+driver.implicitly_wait(1)
+
 driver.switch_to.window(driver.window_handles[1])
 
 printRateExceptions = driver.find_element(By.XPATH, '//*[@id="printReport"]')
@@ -103,6 +107,9 @@ ActionChains(driver) \
     .key_up(Keys.CONTROL) \
     .key_up(Keys.SHIFT) \
     .perform()
+
+driver.implicitly_wait(1)
+
 
 driver.switch_to.window(driver.window_handles[1])
 
