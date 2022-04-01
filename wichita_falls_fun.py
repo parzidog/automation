@@ -11,14 +11,17 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 op_sys = platform.system()
 
-s = Service(
-    executable_path='/Users/WichitaFalls/Documents/automation/chromedriver.exe')
-
 if op_sys == 'Darwin':
     driver = webdriver.Safari()
 
-else:
+elif:
     os.system('set PATH=%PATH%;D:\chromedriver.exe')
+    s = Service(
+        executable_path='/Users/WichitaFalls/Documents/automation/chromedriver.exe')
+
+else:
+    print('System is not compatible or something went wrong\. Ask Kenny for help!')
+
     driver = webdriver.Chrome(service=s)
 
 driver.get("https://www.webselfstorage.com/SignIn")
