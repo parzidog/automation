@@ -1,15 +1,30 @@
 import time
+import os
+import platform
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-driver = webdriver.Chrome('./chromedriver.exe')
+op_sys = platform.system()
+
+s = Service(
+    executable_path='/Users/WichitaFalls/Documents/automation/chromedriver.exe')
+
+if op_sys == 'Darwin':
+    driver = webdriver.Safari()
+
+else:
+    os.system('set PATH=%PATH%;D:\chromedriver.exe')
+    driver = webdriver.Chrome(service=s)
 
 driver.get("https://www.webselfstorage.com/SignIn")
-driver.maximize_window()
+driver.minimize_window()
+
+driver.headless = True
 
 driver.implicitly_wait(4)
 
@@ -58,13 +73,14 @@ ActionChains(driver) \
 
 driver.implicitly_wait(1)
 driver.switch_to.window(driver.window_handles[1])
-driver.implicitly_wait(1)
+driver.implicitly_wait(2)
 
 fromDays = driver.find_element(
     By.XPATH, '//*[@id="ReportArguments_FromDaysLate"]')
 fromDays.click()
 fromDays.clear()
 fromDays.send_keys("1")
+driver.implicitly_wait(1)
 
 fromDays = driver.find_element(
     By.XPATH, '//*[@id="ReportArguments_ToDaysLate"]')
@@ -73,30 +89,40 @@ fromDays.clear()
 fromDays.send_keys("999")
 fromDays.send_keys(Keys.ENTER)
 
-driver.switch_to.window(driver.window_handles[-1])
+driver.implicitly_wait(2)
+
+driver.switch_to.window(driver.window_handles[0])
 
 #Occupancy Rate Exceptions
 
-printRateExceptions = driver.find_element(
+driver.implicitly_wait(1)
+
+RateExceptions = driver.find_element(
     By.XPATH, '//*[@id="reportsListWidget"]/div/div[2]/div[3]/ul/li[1]/a')
 ActionChains(driver) \
     .key_down(Keys.CONTROL) \
     .key_down(Keys.SHIFT) \
-    .click(printRateExceptions) \
+    .click(RateExceptions) \
     .key_up(Keys.CONTROL) \
     .key_up(Keys.SHIFT) \
     .perform()
 
 driver.implicitly_wait(1)
 
-driver.switch_to.window(driver.window_handles[1])
+driver.switch_to.window(driver.window_handles[2])
 
-printRateExceptions = driver.find_element(By.XPATH, '//*[@id="printReport"]')
-printRateExceptions.click()
+driver.implicitly_wait(1)
 
-driver.switch_to.window(driver.window_handles[-1])
+# printRateExceptions = driver.find_element(By.XPATH, '//*[@id="printReport"]')
+# printRateExceptions.click()
+
+driver.implicitly_wait(1)
+
+driver.switch_to.window(driver.window_handles[0])
 
 #Management Summary
+
+driver.implicitly_wait(2)
 
 managementSummary = driver.find_element(
     By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[8]/a')
@@ -111,13 +137,19 @@ ActionChains(driver) \
 driver.implicitly_wait(1)
 
 
-driver.switch_to.window(driver.window_handles[1])
+driver.switch_to.window(driver.window_handles[3])
+
+driver.implicitly_wait(1)
 
 printManagementSummary = driver.find_element(
     By.XPATH, '//*[@id="iframeContents"]/div/section/div/form/div[2]/div[2]/button')
 printManagementSummary.click()
 
-driver.switch_to.window(driver.window_handles[-1])
+driver.implicitly_wait(1)
+
+driver.switch_to.window(driver.window_handles[0])
+
+driver.implicitly_wait(2)
 
 #Occupancy Overview
 
@@ -131,10 +163,10 @@ ActionChains(driver) \
     .key_up(Keys.SHIFT) \
     .perform()
 
-driver.switch_to.window(driver.window_handles[1])
+driver.switch_to.window(driver.window_handles[4])
 
-printOccupancyOverview = driver.find_element(
-    By.XPATH, '//*[@id="printReport"]')
-fromDays.click()
+# printOccupancyOverview = driver.find_element(
+# By.XPATH, '//*[@id="printReport"]')
+# fromDays.click()
 
-driver.switch_to.window(driver.window_handles[-1])
+driver.switch_to.window(driver.window_handles[0])
