@@ -12,7 +12,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 op_sys = platform.system()
 
 if op_sys == 'Darwin':
-    s=Service(executable_path='/Users/parzidog/Documents/GitHub/automation/chromedriver.exe')
     driver = webdriver.Safari()
 
 elif op_sys == 'Windows':
@@ -54,7 +53,7 @@ signIn = driver.find_element(
     By.XPATH, '//*[@id="login_form"]/div/div[4]/input')
 signIn.click()
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(3)
 
 reports = driver.find_element(By.XPATH, '//*[@id="ctReports"]')
 reports.click()
@@ -63,8 +62,7 @@ driver.implicitly_wait(1)
 
 #Collection Worksheet
 
-collectionWorksheet = driver.find_element(
-    By.XPATH, '//*[@id="reportsListWidget"]/div/div[1]/div/ul/li[4]/a')
+collectionWorksheet = driver.find_element(By.XPATH, '//*[@id="reportsListWidget"]/div/div[1]/div/ul/li[4]/a')
 ActionChains(driver) \
     .key_down(Keys.CONTROL) \
     .key_down(Keys.SHIFT) \
