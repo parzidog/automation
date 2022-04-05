@@ -9,6 +9,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
+from keyboard import press
+
 op_sys = platform.system()
 
 if op_sys == 'Darwin':
@@ -16,16 +18,19 @@ if op_sys == 'Darwin':
 
 elif op_sys == 'Windows':
     os.system('set PATH=%PATH%;D:\chromedriver.exe')
-    s = Service(executable_path='/Users/WichitaFalls/Documents/automation/chromedriver.exe')
+    os.system('set PATH=%PATH%;E:\chromedriver.exe')
+    os.system('set PATH=%PATH%;F:\chromedriver.exe')
+    s = Service(
+        executable_path='C:/Users/WichitaFalls/Documents/automation/chromedriver.exe')
     driver = webdriver.Chrome(service=s)
 
 else:
-    print('System is not compatible or something went wrong\. Ask Kenny for help!')
-
-driver.get("https://www.webselfstorage.com/SignIn")
-driver.minimize_window()
+    print('System is not compatible or something went wrong. Ask Kenny for help!')
 
 driver.headless = True
+
+driver.get("https://www.webselfstorage.com/SignIn")
+driver.maximize_window()
 
 driver.implicitly_wait(4)
 
@@ -37,7 +42,7 @@ for character in text:
     username.send_keys(character)
     time.sleep(0.1)  # pause for 0.3 seconds("kenneth_wf")
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 password = driver.find_element(By.XPATH, '//*[@id="Password"]')
 password.click()
@@ -47,7 +52,7 @@ for character in text:
     password.send_keys(character)
     time.sleep(0.1)  # pause for 0.3 seconds
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 signIn = driver.find_element(
     By.XPATH, '//*[@id="login_form"]/div/div[4]/input')
@@ -58,11 +63,12 @@ driver.implicitly_wait(3)
 reports = driver.find_element(By.XPATH, '//*[@id="ctReports"]')
 reports.click()
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 #Collection Worksheet
 
-collectionWorksheet = driver.find_element(By.XPATH, '//*[@id="reportsListWidget"]/div/div[1]/div/ul/li[4]/a')
+collectionWorksheet = driver.find_element(
+    By.XPATH, '//*[@id="reportsListWidget"]/div/div[1]/div/ul/li[4]/a')
 ActionChains(driver) \
     .key_down(Keys.CONTROL) \
     .key_down(Keys.SHIFT) \
@@ -71,7 +77,7 @@ ActionChains(driver) \
     .key_up(Keys.SHIFT) \
     .perform()
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 driver.switch_to.window(driver.window_handles[1])
 driver.implicitly_wait(2)
 
@@ -80,7 +86,7 @@ fromDays = driver.find_element(
 fromDays.click()
 fromDays.clear()
 fromDays.send_keys("1")
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 fromDays = driver.find_element(
     By.XPATH, '//*[@id="ReportArguments_ToDaysLate"]')
@@ -89,13 +95,17 @@ fromDays.clear()
 fromDays.send_keys("999")
 fromDays.send_keys(Keys.ENTER)
 
-driver.implicitly_wait(2)
+driver.implicitly_wait(10)
+
+press('ENTER')
+
+driver.implicitly_wait(10)
 
 driver.switch_to.window(driver.window_handles[0])
 
 #Occupancy Rate Exceptions
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 RateExceptions = driver.find_element(
     By.XPATH, '//*[@id="reportsListWidget"]/div/div[2]/div[3]/ul/li[1]/a')
@@ -107,16 +117,16 @@ ActionChains(driver) \
     .key_up(Keys.SHIFT) \
     .perform()
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 driver.switch_to.window(driver.window_handles[2])
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 # printRateExceptions = driver.find_element(By.XPATH, '//*[@id="printReport"]')
 # printRateExceptions.click()
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 driver.switch_to.window(driver.window_handles[0])
 
@@ -134,18 +144,18 @@ ActionChains(driver) \
     .key_up(Keys.SHIFT) \
     .perform()
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 
 driver.switch_to.window(driver.window_handles[3])
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 printManagementSummary = driver.find_element(
     By.XPATH, '//*[@id="iframeContents"]/div/section/div/form/div[2]/div[2]/button')
 printManagementSummary.click()
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 driver.switch_to.window(driver.window_handles[0])
 

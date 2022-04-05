@@ -3,6 +3,8 @@ import platform
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.safari.service import Service
 
@@ -33,7 +35,7 @@ for character in text:
     username.send_keys(character)
     time.sleep(0.1)  # pause for 0.3 seconds
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 password = driver.find_element(By.XPATH, '//*[@id="Password"]')
 password.click()
@@ -45,7 +47,7 @@ for character in text:
     password.send_keys(character)
     time.sleep(0.1)  # pause for 0.3 seconds
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 signIn = driver.find_element(
     By.XPATH, '//*[@id="login_form"]/div/div[4]/input')
@@ -55,11 +57,11 @@ driver.implicitly_wait(10)
 
 reports = driver.find_element(By.XPATH, '//*[@id="ctReports"]')
 
-driver.implicitly_wait(2)
+driver.implicitly_wait(10)
 
 reports.click()
 
-driver.implicitly_wait(5)
+driver.implicitly_wait(10)
 
 #Collection Worksheet
 
@@ -81,14 +83,14 @@ fromDays.click()
 fromDays.clear()
 fromDays.send_keys("1")
 
-fromDays = driver.find_element(
+toDays = driver.find_element(
     By.XPATH, '//*[@id="ReportArguments_ToDaysLate"]')
-fromDays.click()
-fromDays.clear()
-fromDays.send_keys("999")
-fromDays.send_keys(Keys.ENTER)
+toDays.click()
+toDays.clear()
+toDays.send_keys("999")
+toDays.send_keys(Keys.ENTER)
 
-driver.switch_to.window(driver.window_handles[-1])
+driver.switch_to.window(driver.window_handles[0])
 
 #Occupancy Rate Exceptions
 
@@ -102,12 +104,12 @@ ActionChains(driver) \
     .key_up(Keys.SHIFT) \
     .perform()
 
-driver.switch_to.window(driver.window_handles[1])
+driver.switch_to.window(driver.window_handles[2])
 
 printRateExceptions = driver.find_element(By.XPATH, '//*[@id="printReport"]')
 printRateExceptions.click()
 
-driver.switch_to.window(driver.window_handles[-1])
+driver.switch_to.window(driver.window_handles[0])
 
 #Management Summary
 
@@ -121,13 +123,13 @@ ActionChains(driver) \
     .key_up(Keys.SHIFT) \
     .perform()
 
-driver.switch_to.window(driver.window_handles[1])
+driver.switch_to.window(driver.window_handles[3])
 
 printManagementSummary = driver.find_element(
     By.XPATH, '//*[@id="iframeContents"]/div/section/div/form/div[2]/div[2]/button')
 printManagementSummary.click()
 
-driver.switch_to.window(driver.window_handles[-1])
+driver.switch_to.window(driver.window_handles[0])
 
 #Occupancy Overview
 
@@ -141,13 +143,13 @@ ActionChains(driver) \
     .key_up(Keys.SHIFT) \
     .perform()
 
-driver.switch_to.window(driver.window_handles[1])
+driver.switch_to.window(driver.window_handles[4])
 
 printOccupancyOverview = driver.find_element(
     By.XPATH, '//*[@id="printReport"]')
 fromDays.click()
 
-driver.switch_to.window(driver.window_handles[-1])
+driver.switch_to.window(driver.window_handles[0])
 
 
 driver.quit()
