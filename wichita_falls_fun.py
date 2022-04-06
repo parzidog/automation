@@ -15,6 +15,7 @@ op_sys = platform.system()
 
 if op_sys == 'Darwin':
     driver = webdriver.Safari()
+
     def open_tab(report):
         ActionChains(driver) \
             .key_down(Keys.COMMAND) \
@@ -27,10 +28,12 @@ if op_sys == 'Darwin':
 elif op_sys == 'Windows':
     os.system('set PATH=%PATH%;D:\chromedriver.exe')
     os.system('set PATH=%PATH%;E:\chromedriver.exe')
-    os.system('set PATH=%PATH%;F:\chromedriver.exe')
+    os.system('cF:\chromedriver.exe')
     s = Service(
         executable_path='C:/Users/WichitaFalls/Documents/automation/chromedriver.exe')
     driver = webdriver.Chrome(service=s)
+    # driver = webdriver.Chrome()
+
     def open_tab(report):
         ActionChains(driver) \
             .key_down(Keys.CONTROL) \
@@ -48,7 +51,7 @@ driver.headless = True
 driver.get("https://www.webselfstorage.com/SignIn")
 driver.maximize_window()
 
-driver.implicitly_wait(4)
+driver.implicitly_wait(10)
 
 username = driver.find_element(By.XPATH, '//*[@id="userName"]')
 username.click()
@@ -68,13 +71,13 @@ for character in text:
     password.send_keys(character)
     time.sleep(0.1)  # pause for 0.3 seconds
 
-driver.implicitly_wait(1)
+driver.implicitly_wait(10)
 
 signIn = driver.find_element(
     By.XPATH, '//*[@id="login_form"]/div/div[4]/input')
 signIn.click()
 
-driver.implicitly_wait(2)
+driver.implicitly_wait(10)
 
 reports = driver.find_element(By.XPATH, '//*[@id="ctReports"]')
 reports.click()
@@ -90,13 +93,14 @@ open_tab(collectionWorksheet)
 
 driver.implicitly_wait(10)
 driver.switch_to.window(driver.window_handles[1])
-driver.implicitly_wait(2)
+driver.implicitly_wait(10)
+
 
 fromDays = driver.find_element(
     By.XPATH, '//*[@id="ReportArguments_FromDaysLate"]')
 fromDays.click()
 fromDays.clear()
-fromDays.send_keys("1")
+fromDays.send_keys('1')
 driver.implicitly_wait(10)
 
 fromDays = driver.find_element(
@@ -108,24 +112,16 @@ fromDays.send_keys(Keys.ENTER)
 
 driver.implicitly_wait(10)
 
-keyboard.press('ENTER')
-
-driver.implicitly_wait(10)
-
-press('ENTER')
-
-driver.implicitly_wait(10)
+#Occupancy Rate Exceptions
 
 driver.switch_to.window(driver.window_handles[0])
 
-#Occupancy Rate Exceptions
-
 driver.implicitly_wait(10)
 
-RateExceptions = driver.find_element(
+rateExceptions = driver.find_element(
     By.XPATH, '//*[@id="reportsListWidget"]/div/div[2]/div[3]/ul/li[1]/a')
 
-open_tab(collectionWorksheet)
+open_tab(rateExceptions)
 
 driver.implicitly_wait(10)
 
@@ -133,16 +129,15 @@ driver.switch_to.window(driver.window_handles[2])
 
 driver.implicitly_wait(10)
 
-# printRateExceptions = driver.find_element(By.XPATH, '//*[@id="printReport"]')
-# printRateExceptions.click()
-
 driver.implicitly_wait(10)
 
 driver.switch_to.window(driver.window_handles[0])
 
 #Management Summary
 
-driver.implicitly_wait(2)
+driver.switch_to.window(driver.window_handles[0])
+
+driver.implicitly_wait(10)
 
 managementSummary = driver.find_element(
     By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[8]/a')
@@ -162,11 +157,11 @@ printManagementSummary.click()
 
 driver.implicitly_wait(10)
 
+#Occupancy Overview
+
 driver.switch_to.window(driver.window_handles[0])
 
-driver.implicitly_wait(2)
-
-#Occupancy Overview
+driver.implicitly_wait(10)
 
 occupancyOverview = driver.find_element(
     By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[11]/a')
@@ -174,9 +169,5 @@ occupancyOverview = driver.find_element(
 open_tab(occupancyOverview)
 
 driver.switch_to.window(driver.window_handles[4])
-
-# printOccupancyOverview = driver.find_element(
-# By.XPATH, '//*[@id="printReport"]')
-# fromDays.click()
 
 driver.switch_to.window(driver.window_handles[0])
