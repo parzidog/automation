@@ -5,12 +5,13 @@
 from PyQt5.QtGui import QColor
 
 ## ==> GUI FILE
-from main import *
+from ui_main import *
 
 ## ==> GLOBALS
 GLOBAL_STATE = 0
 
-class UIFunctions(QMainWindow):
+
+class UIFunctions():
 
     ## ==> MAXIMIZE RESTORE FUNCTION
     def maximize_restore(self):
@@ -26,14 +27,16 @@ class UIFunctions(QMainWindow):
 
             # IF MAXIMIZED REMOVE MARGINS AND BORDER RADIUS
             self.ui.drop_shadow_layout.setContentsMargins(0, 0, 0, 0)
-            self.ui.drop_shadow_frame.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(42, 44, 111, 255), stop:0.521368 rgba(28, 29, 73, 255)); border-radius: 0px;")
+            self.ui.drop_shadow_frame.setStyleSheet(
+                "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(42, 44, 111, 255), stop:0.521368 rgba(28, 29, 73, 255)); border-radius: 0px;")
             self.ui.btn_maximize.setToolTip("Restore")
         else:
             GLOBAL_STATE = 0
             self.showNormal()
             self.resize(self.width()+1, self.height()+1)
             self.ui.drop_shadow_layout.setContentsMargins(10, 10, 10, 10)
-            self.ui.drop_shadow_frame.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(42, 44, 111, 255), stop:0.521368 rgba(28, 29, 73, 255)); border-radius: 10px;")
+            self.ui.drop_shadow_frame.setStyleSheet(
+                "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(42, 44, 111, 255), stop:0.521368 rgba(28, 29, 73, 255)); border-radius: 10px;")
             self.ui.btn_maximize.setToolTip("Maximize")
 
     ## ==> UI DEFINITIONS
@@ -54,7 +57,8 @@ class UIFunctions(QMainWindow):
         self.ui.drop_shadow_frame.setGraphicsEffect(self.shadow)
 
         # MAXIMIZE / RESTORE
-        self.ui.btn_maximize.clicked.connect(lambda: UIFunctions.maximize_restore(self))
+        self.ui.btn_maximize.clicked.connect(
+            lambda: UIFunctions.maximize_restore(self))
 
         # MINIMIZE
         self.ui.btn_minimize.clicked.connect(lambda: self.showMinimized())
@@ -64,11 +68,11 @@ class UIFunctions(QMainWindow):
 
         ## ==> CREATE SIZE GRIP TO RESIZE WINDOW
         self.sizegrip = QSizeGrip(self.ui.frame_grip)
-        self.sizegrip.setStyleSheet("QSizeGrip { width: 10px; height: 10px; margin: 5px } QSizeGrip:hover { background-color: rgb(50, 42, 94) }")
+        self.sizegrip.setStyleSheet(
+            "QSizeGrip { width: 10px; height: 10px; margin: 5px } QSizeGrip:hover { background-color: rgb(50, 42, 94) }")
         self.sizegrip.setToolTip("Resize Window")
 
+    ## RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTORED
 
-
-    ## RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTAURED
     def returnStatus():
         return GLOBAL_STATE

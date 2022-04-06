@@ -28,7 +28,7 @@ if op_sys == 'Darwin':
 elif op_sys == 'Windows':
     os.system('set PATH=%PATH%;D:\chromedriver.exe')
     os.system('set PATH=%PATH%;E:\chromedriver.exe')
-    os.system('cF:\chromedriver.exe')
+    os.system('set PATH=%PATH%F:\chromedriver.exe')
     s = Service(
         executable_path='C:/Users/WichitaFalls/Documents/automation/chromedriver.exe')
     driver = webdriver.Chrome(service=s)
