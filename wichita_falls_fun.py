@@ -1,6 +1,7 @@
 import time
 import os
 import platform
+from PyQt5 import QtCore
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.service import Service
@@ -11,163 +12,163 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 from keyboard import press
 
-op_sys = platform.system()
 
-if op_sys == 'Darwin':
-    driver = webdriver.Safari()
+class WFFunction():
+    op_sys = platform.system()
 
-    def open_tab(report):
-        ActionChains(driver) \
-            .key_down(Keys.COMMAND) \
-            .key_down(Keys.SHIFT) \
-            .click(report) \
-            .key_up(Keys.COMMAND) \
-            .key_up(Keys.SHIFT) \
-            .perform()
+    if op_sys == 'Darwin':
+        driver = webdriver.Safari()
 
-elif op_sys == 'Windows':
-    os.system('set PATH=%PATH%;D:\chromedriver.exe')
-    os.system('set PATH=%PATH%;E:\chromedriver.exe')
-    os.system('set PATH=%PATH%F:\chromedriver.exe')
-    s = Service(
-        executable_path='C:/Users/WichitaFalls/Documents/automation/chromedriver.exe')
-    driver = webdriver.Chrome(service=s)
-    # driver = webdriver.Chrome()
+        def open_tab(driver, report):
+            ActionChains(driver) \
+                .key_down(Keys.COMMAND) \
+                .key_down(Keys.SHIFT) \
+                .click(report) \
+                .key_up(Keys.COMMAND) \
+                .key_up(Keys.SHIFT) \
+                .perform()
 
-    def open_tab(report):
-        ActionChains(driver) \
-            .key_down(Keys.CONTROL) \
-            .key_down(Keys.SHIFT) \
-            .click(report) \
-            .key_up(Keys.CONTROL) \
-            .key_up(Keys.SHIFT) \
-            .perform()
+    elif op_sys == 'Windows':
+        os.system('set PATH=%PATH%;D:\chromedriver.exe')
+        os.system('set PATH=%PATH%;E:\chromedriver.exe')
+        os.system('set PATH=%PATH%F:\chromedriver.exe')
+        s = Service(
+            executable_path='./chromedriver.exe')
+        driver = webdriver.Chrome(service=s)
+        # driver = webdriver.Chrome()
 
-else:
-    print('System is not compatible or something went wrong. Ask Kenny for help!')
+        def open_tab(driver, report):
+            ActionChains(driver) \
+                .key_down(Keys.CONTROL) \
+                .key_down(Keys.SHIFT) \
+                .click(report) \
+                .key_up(Keys.CONTROL) \
+                .key_up(Keys.SHIFT) \
+                .perform()
 
-driver.headless = True
+    else:
+        print('System is not compatible or something went wrong. Ask Kenny for help!')
 
-driver.get("https://www.webselfstorage.com/SignIn")
-driver.maximize_window()
+    driver.headless = True
 
-driver.implicitly_wait(10)
+    driver.get("https://www.webselfstorage.com/SignIn")
+    driver.maximize_window()
 
-username = driver.find_element(By.XPATH, '//*[@id="userName"]')
-username.click()
-#Enter new username
-text = "kenneth_wf"
-for character in text:
-    username.send_keys(character)
-    time.sleep(0.1)  # pause for 0.3 seconds("kenneth_wf")
+    driver.implicitly_wait(10)
 
-driver.implicitly_wait(10)
+    username = driver.find_element(By.XPATH, '//*[@id="userName"]')
+    username.click()
+    #Enter new username
+    text = "kenneth_wf"
+    for character in text:
+        username.send_keys(character)
+        time.sleep(0.1)  # pause for 0.3 seconds("kenneth_wf")
 
-password = driver.find_element(By.XPATH, '//*[@id="Password"]')
-password.click()
-#Enter new password
-text = "Storage1!"
-for character in text:
-    password.send_keys(character)
-    time.sleep(0.1)  # pause for 0.3 seconds
+    driver.implicitly_wait(10)
 
-driver.implicitly_wait(10)
+    password = driver.find_element(By.XPATH, '//*[@id="Password"]')
+    password.click()
+    #Enter new password
+    text = "Storage1!"
+    for character in text:
+        password.send_keys(character)
+        time.sleep(0.1)  # pause for 0.3 seconds
 
-signIn = driver.find_element(
-    By.XPATH, '//*[@id="login_form"]/div/div[4]/input')
-signIn.click()
+    driver.implicitly_wait(10)
 
-driver.implicitly_wait(10)
+    signIn = driver.find_element(
+        By.XPATH, '//*[@id="login_form"]/div/div[4]/input')
+    signIn.click()
 
-reports = driver.find_element(By.XPATH, '//*[@id="ctReports"]')
-reports.click()
+    driver.implicitly_wait(10)
 
-driver.implicitly_wait(10)
+    reports = driver.find_element(By.XPATH, '//*[@id="ctReports"]')
+    reports.click()
 
-#Collection Worksheet
+    driver.implicitly_wait(10)
 
-collectionWorksheet = driver.find_element(
-    By.XPATH, '//*[@id="reportsListWidget"]/div/div[1]/div/ul/li[4]/a')
+    #Collection Worksheet
 
-open_tab(collectionWorksheet)
+    collectionWorksheet = driver.find_element(
+        By.XPATH, '//*[@id="reportsListWidget"]/div/div[1]/div/ul/li[4]/a')
 
-driver.implicitly_wait(10)
-driver.switch_to.window(driver.window_handles[1])
-driver.implicitly_wait(10)
+    open_tab(driver, collectionWorksheet)
 
+    driver.implicitly_wait(10)
+    driver.switch_to.window(driver.window_handles[1])
+    driver.implicitly_wait(10)
 
-fromDays = driver.find_element(
-    By.XPATH, '//*[@id="ReportArguments_FromDaysLate"]')
-fromDays.click()
-fromDays.clear()
-fromDays.send_keys('1')
-driver.implicitly_wait(10)
+    fromDays = driver.find_element(
+        By.XPATH, '//*[@id="ReportArguments_FromDaysLate"]')
+    fromDays.click()
+    fromDays.clear()
+    fromDays.send_keys('1')
+    driver.implicitly_wait(10)
 
-fromDays = driver.find_element(
-    By.XPATH, '//*[@id="ReportArguments_ToDaysLate"]')
-fromDays.click()
-fromDays.clear()
-fromDays.send_keys("999")
-fromDays.send_keys(Keys.ENTER)
+    fromDays = driver.find_element(
+        By.XPATH, '//*[@id="ReportArguments_ToDaysLate"]')
+    fromDays.click()
+    fromDays.clear()
+    fromDays.send_keys("999")
+    fromDays.send_keys(Keys.ENTER)
 
-driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
 
-#Occupancy Rate Exceptions
+    #Occupancy Rate Exceptions
 
-driver.switch_to.window(driver.window_handles[0])
+    driver.switch_to.window(driver.window_handles[0])
 
-driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
 
-rateExceptions = driver.find_element(
-    By.XPATH, '//*[@id="reportsListWidget"]/div/div[2]/div[3]/ul/li[1]/a')
+    rateExceptions = driver.find_element(
+        By.XPATH, '//*[@id="reportsListWidget"]/div/div[2]/div[3]/ul/li[1]/a')
 
-open_tab(rateExceptions)
+    open_tab(driver, rateExceptions)
 
-driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
 
-driver.switch_to.window(driver.window_handles[2])
+    driver.switch_to.window(driver.window_handles[2])
 
-driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
 
-driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
 
-driver.switch_to.window(driver.window_handles[0])
+    driver.switch_to.window(driver.window_handles[0])
 
-#Management Summary
+    #Management Summary
 
-driver.switch_to.window(driver.window_handles[0])
+    driver.switch_to.window(driver.window_handles[0])
 
-driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
 
-managementSummary = driver.find_element(
-    By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[8]/a')
+    managementSummary = driver.find_element(
+        By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[8]/a')
 
-open_tab(managementSummary)
+    open_tab(driver, managementSummary)
 
-driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
 
+    driver.switch_to.window(driver.window_handles[3])
 
-driver.switch_to.window(driver.window_handles[3])
+    driver.implicitly_wait(10)
 
-driver.implicitly_wait(10)
+    printManagementSummary = driver.find_element(
+        By.XPATH, '//*[@id="iframeContents"]/div/section/div/form/div[2]/div[2]/button')
+    printManagementSummary.click()
 
-printManagementSummary = driver.find_element(
-    By.XPATH, '//*[@id="iframeContents"]/div/section/div/form/div[2]/div[2]/button')
-printManagementSummary.click()
+    driver.implicitly_wait(10)
 
-driver.implicitly_wait(10)
+    #Occupancy Overview
 
-#Occupancy Overview
+    driver.switch_to.window(driver.window_handles[0])
 
-driver.switch_to.window(driver.window_handles[0])
+    driver.implicitly_wait(10)
 
-driver.implicitly_wait(10)
+    occupancyOverview = driver.find_element(
+        By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[11]/a')
 
-occupancyOverview = driver.find_element(
-    By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[11]/a')
+    open_tab(driver, occupancyOverview)
 
-open_tab(occupancyOverview)
+    driver.switch_to.window(driver.window_handles[4])
 
-driver.switch_to.window(driver.window_handles[4])
-
-driver.switch_to.window(driver.window_handles[0])
+    driver.switch_to.window(driver.window_handles[0])
