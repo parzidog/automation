@@ -11,7 +11,7 @@ from PyQt5.QtCore import QCoreApplication, QPropertyAnimation, QDate, QDateTime,
 from PyQt5.QtWidgets import *
 
 # GUI FILE
-from ui_main import Ui_MainWindow
+from ui_main import *
 
 # IMPORT FUNCTIONS
 from ui_window_functions import *
@@ -48,13 +48,6 @@ class MainWindow(QMainWindow):
     # APP EVENTS
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
-
-    #APP FUNCTIONS
-    def appFunctions(self):  # , wichita_falls_fun):
-        self.wichita_falls.clicked.connect(clickme(WF))
-
-        # def clickme(button_click):
-        #     button_click = wichita_falls_fun
 
 
 if __name__ == "__main__":

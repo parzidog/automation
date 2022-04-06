@@ -4,6 +4,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from wichita_falls_fun import *
 
 
 class Ui_MainWindow(object):

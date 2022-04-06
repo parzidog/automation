@@ -13,7 +13,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from keyboard import press
 
 
-class WFFunction():
+def getReports():
+
     op_sys = platform.system()
 
     if op_sys == 'Darwin':

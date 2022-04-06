@@ -2,6 +2,11 @@
 # CREATOR: KENNETH A SCHAEFER II
 # V:0.0.7
 
+import sys
+import platform
+import PyQt5
+from PyQt5 import QtCore, QtWidgets  # , QtGui
+from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QColor
 
 ## ==> GUI FILE
@@ -11,7 +16,7 @@ from ui_main import *
 GLOBAL_STATE = 0
 
 
-class UIFunctions():
+class UIFunctions(QMainWindow):
 
     ## ==> MAXIMIZE RESTORE FUNCTION
     def maximize_restore(self):
@@ -71,6 +76,10 @@ class UIFunctions():
         self.sizegrip.setStyleSheet(
             "QSizeGrip { width: 10px; height: 10px; margin: 5px } QSizeGrip:hover { background-color: rgb(50, 42, 94) }")
         self.sizegrip.setToolTip("Resize Window")
+
+        # BUTTON CLICK FUNCTIONS
+        self.ui.wichita_falls.clicked.connect(
+            lambda: self.wichita_falls_fun.getReports())
 
     ## RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTORED
 
