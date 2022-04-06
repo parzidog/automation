@@ -39,24 +39,22 @@ class MainWindow(QMainWindow):
         # SET TITLE BAR
         self.ui.title_bar.mouseMoveEvent = moveWindow
 
-        ## ==> SET UI DEFINITIONS
+        # ==> SET UI DEFINITIONS
         UIFunctions.uiDefinitions(self)
 
-        ## SHOW ==> MAIN WINDOW
-        ########################################################################
+        # SHOW MAIN WINDOW
         self.show()
 
-    ## APP EVENTS
-    ########################################################################
+    # APP EVENTS
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
 
-    ##APP FUNCTIONS
+    #APP FUNCTIONS
     def appFunctions(self):  # , wichita_falls_fun):
-        self.wichita_falls.clicked.connect(self.clickme.WF)
+        self.wichita_falls.clicked.connect(clickme(WF))
 
-    def clickme(self, wichita_falls_fun):
-        WF = wichita_falls_fun
+        # def clickme(button_click):
+        #     button_click = wichita_falls_fun
 
 
 if __name__ == "__main__":

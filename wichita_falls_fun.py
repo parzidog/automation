@@ -15,6 +15,14 @@ op_sys = platform.system()
 
 if op_sys == 'Darwin':
     driver = webdriver.Safari()
+    def open_tab(report):
+        ActionChains(driver) \
+            .key_down(Keys.COMMAND) \
+            .key_down(Keys.SHIFT) \
+            .click(report) \
+            .key_up(Keys.COMMAND) \
+            .key_up(Keys.SHIFT) \
+            .perform()
 
 elif op_sys == 'Windows':
     os.system('set PATH=%PATH%;D:\chromedriver.exe')
@@ -23,6 +31,14 @@ elif op_sys == 'Windows':
     s = Service(
         executable_path='C:/Users/WichitaFalls/Documents/automation/chromedriver.exe')
     driver = webdriver.Chrome(service=s)
+    def open_tab(report):
+        ActionChains(driver) \
+            .key_down(Keys.CONTROL) \
+            .key_down(Keys.SHIFT) \
+            .click(report) \
+            .key_up(Keys.CONTROL) \
+            .key_up(Keys.SHIFT) \
+            .perform()
 
 else:
     print('System is not compatible or something went wrong. Ask Kenny for help!')
@@ -52,13 +68,13 @@ for character in text:
     password.send_keys(character)
     time.sleep(0.1)  # pause for 0.3 seconds
 
-driver.implicitly_wait(10)
+driver.implicitly_wait(1)
 
 signIn = driver.find_element(
     By.XPATH, '//*[@id="login_form"]/div/div[4]/input')
 signIn.click()
 
-driver.implicitly_wait(3)
+driver.implicitly_wait(2)
 
 reports = driver.find_element(By.XPATH, '//*[@id="ctReports"]')
 reports.click()
@@ -69,13 +85,8 @@ driver.implicitly_wait(10)
 
 collectionWorksheet = driver.find_element(
     By.XPATH, '//*[@id="reportsListWidget"]/div/div[1]/div/ul/li[4]/a')
-ActionChains(driver) \
-    .key_down(Keys.CONTROL) \
-    .key_down(Keys.SHIFT) \
-    .click(collectionWorksheet) \
-    .key_up(Keys.CONTROL) \
-    .key_up(Keys.SHIFT) \
-    .perform()
+
+open_tab(collectionWorksheet)
 
 driver.implicitly_wait(10)
 driver.switch_to.window(driver.window_handles[1])
@@ -97,6 +108,10 @@ fromDays.send_keys(Keys.ENTER)
 
 driver.implicitly_wait(10)
 
+keyboard.press('ENTER')
+
+driver.implicitly_wait(10)
+
 press('ENTER')
 
 driver.implicitly_wait(10)
@@ -109,13 +124,8 @@ driver.implicitly_wait(10)
 
 RateExceptions = driver.find_element(
     By.XPATH, '//*[@id="reportsListWidget"]/div/div[2]/div[3]/ul/li[1]/a')
-ActionChains(driver) \
-    .key_down(Keys.CONTROL) \
-    .key_down(Keys.SHIFT) \
-    .click(RateExceptions) \
-    .key_up(Keys.CONTROL) \
-    .key_up(Keys.SHIFT) \
-    .perform()
+
+open_tab(collectionWorksheet)
 
 driver.implicitly_wait(10)
 
@@ -136,13 +146,8 @@ driver.implicitly_wait(2)
 
 managementSummary = driver.find_element(
     By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[8]/a')
-ActionChains(driver) \
-    .key_down(Keys.CONTROL) \
-    .key_down(Keys.SHIFT) \
-    .click(managementSummary) \
-    .key_up(Keys.CONTROL) \
-    .key_up(Keys.SHIFT) \
-    .perform()
+
+open_tab(managementSummary)
 
 driver.implicitly_wait(10)
 
@@ -165,13 +170,8 @@ driver.implicitly_wait(2)
 
 occupancyOverview = driver.find_element(
     By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[11]/a')
-ActionChains(driver) \
-    .key_down(Keys.CONTROL) \
-    .key_down(Keys.SHIFT) \
-    .click(occupancyOverview) \
-    .key_up(Keys.CONTROL) \
-    .key_up(Keys.SHIFT) \
-    .perform()
+
+open_tab(occupancyOverview)
 
 driver.switch_to.window(driver.window_handles[4])
 
