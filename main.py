@@ -15,7 +15,6 @@ from ui_main import *
 
 # IMPORT FUNCTIONS
 from ui_window_functions import *
-from wichita_falls_fun import *
 
 
 class MainWindow(QMainWindow):

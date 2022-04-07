@@ -9,16 +9,16 @@ from PyQt5 import QtCore, QtWidgets  # , QtGui
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QColor
 
-## ==> GUI FILE
+# GUI FILE
 from ui_main import *
 
-## ==> GLOBALS
+# GLOBALS
 GLOBAL_STATE = 0
 
 
 class UIFunctions(QMainWindow):
 
-    ## ==> MAXIMIZE RESTORE FUNCTION
+    # MAXIMIZE RESTORE FUNCTION
     def maximize_restore(self):
         global GLOBAL_STATE
         status = GLOBAL_STATE
@@ -44,7 +44,7 @@ class UIFunctions(QMainWindow):
                 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(42, 44, 111, 255), stop:0.521368 rgba(28, 29, 73, 255)); border-radius: 10px;")
             self.ui.btn_maximize.setToolTip("Maximize")
 
-    ## ==> UI DEFINITIONS
+    # UI DEFINITIONS
     def uiDefinitions(self):
 
         # REMOVE TITLE BAR
@@ -71,15 +71,11 @@ class UIFunctions(QMainWindow):
         # CLOSE
         self.ui.btn_close.clicked.connect(lambda: self.close())
 
-        ## ==> CREATE SIZE GRIP TO RESIZE WINDOW
+        # CREATE SIZE GRIP TO RESIZE WINDOW
         self.sizegrip = QSizeGrip(self.ui.frame_grip)
         self.sizegrip.setStyleSheet(
             "QSizeGrip { width: 10px; height: 10px; margin: 5px } QSizeGrip:hover { background-color: rgb(50, 42, 94) }")
         self.sizegrip.setToolTip("Resize Window")
-
-        # BUTTON CLICK FUNCTIONS
-        self.ui.wichita_falls.clicked.connect(
-            lambda: self.wichita_falls_fun.getReports())
 
     ## RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTORED
 
