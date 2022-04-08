@@ -4,6 +4,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import wichita_falls_fun
 
 
 class Ui_MainWindow(object):
@@ -543,8 +544,6 @@ class Ui_MainWindow(object):
         self.site7.setText(_translate("MainWindow", "Site 7"))
         self.site4.setText(_translate("MainWindow", "Site 4"))
         self.amarillo.setText(_translate("MainWindow", "Amarillo"))
-        self.wichita_falls.setWhatsThis(_translate(
-            "MainWindow", "<html><head/><body><p>WF</p></body></html>"))
         self.wichita_falls.setText(_translate("MainWindow", "Wichita Falls"))
         self.label_4.setText(_translate(
             "MainWindow", "Designed and Programmed by: Kenneth Schaefer"))

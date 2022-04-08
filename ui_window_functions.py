@@ -5,12 +5,13 @@
 import sys
 import platform
 import PyQt5
-from PyQt5 import QtCore, QtWidgets  # , QtGui
-from PyQt5.QtWidgets import *
+from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5.QtWidgets import QSizeGrip, QMainWindow, QApplication, QGraphicsDropShadowEffect
 from PyQt5.QtGui import QColor
 
 # GUI FILE
-from ui_main import *
+import ui_main
+import wichita_falls_fun
 
 # GLOBALS
 GLOBAL_STATE = 0
@@ -61,7 +62,7 @@ class UIFunctions(QMainWindow):
         # APPLY DROPSHADOW TO FRAME
         self.ui.drop_shadow_frame.setGraphicsEffect(self.shadow)
 
-        # MAXIMIZE / RESTORE
+        # MAXIMIZE / RESTOREs
         self.ui.btn_maximize.clicked.connect(
             lambda: UIFunctions.maximize_restore(self))
 
@@ -74,10 +75,14 @@ class UIFunctions(QMainWindow):
         # CREATE SIZE GRIP TO RESIZE WINDOW
         self.sizegrip = QSizeGrip(self.ui.frame_grip)
         self.sizegrip.setStyleSheet(
-            "QSizeGrip { width: 10px; height: 10px; margin: 5px } QSizeGrip:hover { background-color: rgb(50, 42, 94) }")
+            "QSizeGrip { width: 10px; height: 10px; margin: 5px } QSizeGrip:hover { background-color: rgb(20,20,20) }")
         self.sizegrip.setToolTip("Resize Window")
+
+        # BUTTON CLICKS
+        self.ui.wichita_falls.clicked.connect(
+            lambda: wichita_falls_fun.wichitaFalls.getReports())
 
     ## RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTORED
 
     def returnStatus():
-        return GLOBAL_STATE
+        return GLOBAL_STATEBs
