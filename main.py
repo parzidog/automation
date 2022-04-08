@@ -3,12 +3,12 @@
 # V:0.0.7
 
 import sys
-# import platform
-# import PyQt5
-# from PyQt5 import QtCore, QtWidgets  # , QtGui
-# from PyQt5.QtCore import QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent
+import platform
+import PyQt5
+from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5.QtCore import QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent
 # from PyQt5 import QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient
-# from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QApplication
 
 # GUI FILE
 import ui_main
@@ -27,8 +27,8 @@ class MainWindow(ui_window_functions.QMainWindow, ui_main.Ui_MainWindow, wichita
         # MOVE WINDOW
         def moveWindow(event):
             # RESTORE BEFORE MOVE
-            if self.UIFunctions.returnStatus() == 1:
-                self.UIFunctions.maximize_restore(self)
+            if ui_window_functions.UIFunctions.returnStatus() == 1:
+                ui_window_functions.UIFunctions.maximize_restore(self)
 
             # IF LEFT CLICK MOVE WINDOW
             if event.buttons() == ui_window_functions.Qt.LeftButton:
