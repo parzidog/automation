@@ -11,6 +11,25 @@ from PyQt5.QtGui import QColor
 
 # GUI FILE
 import ui_main
+import amarillo
+import austin
+import caddo_mills
+import dallas
+import enid
+import ennis
+import hobbs
+import kaufman
+import kaufman_2
+import krum
+import laughlin
+import lindale
+import lubbock
+import mineola
+import mineola_2
+import paris
+import seminole
+import stillwater
+import tulsa
 import wichita_falls_fun
 
 # GLOBALS
@@ -79,10 +98,36 @@ class UIFunctions(QMainWindow):
         self.sizegrip.setToolTip("Resize Window")
 
         # BUTTON CLICKS
+        self.ui.amarillo.clicked.connect(
+            lambda: amarillo.amarillo.getReports())
+        self.ui.austin.clicked.connect(lambda: austin.austin.getReports())
+        self.ui.caddo_mills.clicked.connect(
+            lambda: caddo_mills.caddoMills.getReports())
+        self.ui.dallas.clicked.connect(lambda: dallas.dallas.getReports())
+        self.ui.enid.clicked.connect(lambda: enid.enid.getReports())
+        self.ui.ennis.clicked.connect(lambda: ennis.ennis.getReports())
+        self.ui.hobbs.clicked.connect(lambda: hobbs.hobbs.getReports())
+        self.ui.kaufman.clicked.connect(lambda: kaufman.kaufman.getReports())
+        self.ui.kaufman_2.clicked.connect(
+            lambda: kaufman_2.kaufman2.getReports())
+        self.ui.krum.clicked.connect(lambda: krum.krum.getReports())
+        self.ui.laughlin.clicked.connect(
+            lambda: laughlin.laughlin.getReports())
+        self.ui.lindale.clicked.connect(lambda: lindale.lindale.getReports())
+        self.ui.lubbock.clicked.connect(lambda: lubbock.lubbock.getReports())
+        self.ui.mineola.clicked.connect(lambda: mineola.mineola.getReports())
+        self.ui.mineola_2.clicked.connect(
+            lambda: mineola_2.mineola2.getReports())
+        self.ui.paris.clicked.connect(lambda: paris.paris.getReports())
+        self.ui.seminole.clicked.connect(
+            lambda: seminole.seminole.getReports())
+        self.ui.stillwater.clicked.connect(
+            lambda: stillwater.stillwater.getReports())
+        self.ui.tulsa.clicked.connect(lambda: tulsa.tulsa.getReports())
         self.ui.wichita_falls.clicked.connect(
             lambda: wichita_falls_fun.wichitaFalls.getReports())
 
     ## RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTORED
 
     def returnStatus():
-        return GLOBAL_STATEBs
+        return GLOBAL_STATE

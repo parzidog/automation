@@ -45,11 +45,6 @@ class MainWindow(ui_window_functions.QMainWindow, ui_main.Ui_MainWindow, wichita
         # SHOW MAIN WINDOW
         self.show()
 
-        # BUTTON CLICKS
-        # def buttonClicks(event):
-        #     if event.buttons() == ui_window_functions.Qt.LeftButton:
-        #         self.ui.wichita_falls.clicked.connect(self.wf.getReports)
-
     # APP EVENTS
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
