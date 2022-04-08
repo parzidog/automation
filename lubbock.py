@@ -35,9 +35,17 @@ class lubbock():
             os.system('set PATH=%PATH%;D:\chromedriver.exe')
             os.system('set PATH=%PATH%;E:\chromedriver.exe')
             os.system('set PATH=%PATH%F:\chromedriver.exe')
-            s = Service(
-                executable_path='./chromedriver.exe')
-            driver = webdriver.Chrome(service=s, chrome_options=chrome_options)
+            if getattr(sys, 'frozen', False):
+                # executed as a bundled exe, the driver is in the extracted folder
+                chromedriver_path = os.path.join(
+                    sys._MEIPASS, "chromedriver.exe")
+                driver = webdriver.Chrome(chromedriver_path)
+            else:
+                # executed as a simple script, the driver should be in `PATH`
+                s = Service(
+                    executable_path='./chromedriver.exe')
+                driver = webdriver.Chrome(
+                    service=s, chrome_options=chrome_options)
 
             def open_tab(driver, report):
                 ActionChains(driver) \

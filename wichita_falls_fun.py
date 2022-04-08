@@ -35,9 +35,11 @@ class wichitaFalls():
             os.system('set PATH=%PATH%;D:\chromedriver.exe')
             os.system('set PATH=%PATH%;E:\chromedriver.exe')
             os.system('set PATH=%PATH%F:\chromedriver.exe')
+            # executed as a simple script, the driver should be in `PATH`
             s = Service(
                 executable_path='./chromedriver.exe')
-            driver = webdriver.Chrome(service=s, chrome_options=chrome_options)
+            driver = webdriver.Chrome(
+                service=s, chrome_options=chrome_options)
 
             def open_tab(driver, report):
                 ActionChains(driver) \
