@@ -35,17 +35,13 @@ class austin():
             os.system('set PATH=%PATH%;D:\chromedriver.exe')
             os.system('set PATH=%PATH%;E:\chromedriver.exe')
             os.system('set PATH=%PATH%F:\chromedriver.exe')
-            if getattr(sys, 'frozen', False):
-                # executed as a bundled exe, the driver is in the extracted folder
-                chromedriver_path = os.path.join(
-                    sys._MEIPASS, "chromedriver.exe")
-                driver = webdriver.Chrome(chromedriver_path)
-            else:
-                # executed as a simple script, the driver should be in `PATH`
-                s = Service(
-                    executable_path='./chromedriver.exe')
-                driver = webdriver.Chrome(
-                    service=s, chrome_options=chrome_options)
+            os.system(
+                'set PATH=%PATH%;C:/Users/WichitaFalls/Documents/automation/chromedriver.exe')
+            # executed as a simple script, the driver should be in `PATH`
+            s = Service(
+                executable_path='./chromedriver.exe')
+            driver = webdriver.Chrome(
+                service=s, chrome_options=chrome_options)
 
             def open_tab(driver, report):
                 ActionChains(driver) \
@@ -168,4 +164,4 @@ if __name__ == "__main__":
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
     app = QtWidgets.QApplication(sys.argv)
-    getReports = auston.getReports()
+    getReports = austin.getReports()

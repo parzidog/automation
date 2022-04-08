@@ -35,6 +35,8 @@ class wichitaFalls():
             os.system('set PATH=%PATH%;D:\chromedriver.exe')
             os.system('set PATH=%PATH%;E:\chromedriver.exe')
             os.system('set PATH=%PATH%F:\chromedriver.exe')
+            os.system(
+                'set PATH=%PATH%;C:/Users/WichitaFalls/Documents/automation/chromedriver.exe')
             # executed as a simple script, the driver should be in `PATH`
             s = Service(
                 executable_path='./chromedriver.exe')
