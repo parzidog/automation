@@ -11,7 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 
 
-class wichitaFalls():
+class enid():
     def getReports():
 
         chrome_options = Options()
@@ -40,8 +40,7 @@ class wichitaFalls():
             # executed as a simple script, the driver should be in `PATH`
             s = Service(
                 executable_path='./chromedriver.exe')
-            driver = webdriver.Chrome(
-                service=s, chrome_options=chrome_options)
+            driver = webdriver.Chrome(service=s, chrome_options=chrome_options)
 
             def open_tab(driver, report):
                 ActionChains(driver) \
@@ -164,4 +163,4 @@ if __name__ == "__main__":
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
     app = QtWidgets.QApplication(sys.argv)
-    getReports = wichitaFalls.getReports()
+    getReports = enid.getReports()

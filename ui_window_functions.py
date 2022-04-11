@@ -5,20 +5,41 @@
 import sys
 import platform
 import PyQt5
-from PyQt5 import QtCore, QtWidgets  # , QtGui
-from PyQt5.QtWidgets import *
+from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5.QtWidgets import QSizeGrip, QMainWindow, QApplication, QGraphicsDropShadowEffect
 from PyQt5.QtGui import QColor
+from PyQt5.QtCore import Qt
 
-## ==> GUI FILE
-from ui_main import *
+# GUI FILE
+import ui_main
+import amarillo
+import austin
+import caddo_mills
+import dallas
+import enid
+import ennis
+import hobbs
+import kaufman
+import kaufman_2
+import krum
+import laughlin
+import lindale
+import lubbock
+import mineola
+import mineola_2
+import paris
+import seminole
+import stillwater
+import tulsa
+import wichita_falls_fun
 
-## ==> GLOBALS
+# GLOBALS
 GLOBAL_STATE = 0
 
 
 class UIFunctions(QMainWindow):
 
-    ## ==> MAXIMIZE RESTORE FUNCTION
+    # MAXIMIZE RESTORE FUNCTION
     def maximize_restore(self):
         global GLOBAL_STATE
         status = GLOBAL_STATE
@@ -44,7 +65,7 @@ class UIFunctions(QMainWindow):
                 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(42, 44, 111, 255), stop:0.521368 rgba(28, 29, 73, 255)); border-radius: 10px;")
             self.ui.btn_maximize.setToolTip("Maximize")
 
-    ## ==> UI DEFINITIONS
+    # UI DEFINITIONS
     def uiDefinitions(self):
 
         # REMOVE TITLE BAR
@@ -61,7 +82,7 @@ class UIFunctions(QMainWindow):
         # APPLY DROPSHADOW TO FRAME
         self.ui.drop_shadow_frame.setGraphicsEffect(self.shadow)
 
-        # MAXIMIZE / RESTORE
+        # MAXIMIZE / RESTOREs
         self.ui.btn_maximize.clicked.connect(
             lambda: UIFunctions.maximize_restore(self))
 
@@ -71,15 +92,41 @@ class UIFunctions(QMainWindow):
         # CLOSE
         self.ui.btn_close.clicked.connect(lambda: self.close())
 
-        ## ==> CREATE SIZE GRIP TO RESIZE WINDOW
+        # CREATE SIZE GRIP TO RESIZE WINDOW
         self.sizegrip = QSizeGrip(self.ui.frame_grip)
         self.sizegrip.setStyleSheet(
-            "QSizeGrip { width: 10px; height: 10px; margin: 5px } QSizeGrip:hover { background-color: rgb(50, 42, 94) }")
+            "QSizeGrip { width: 10px; height: 10px; margin: 5px } QSizeGrip:hover { background-color: rgb(20,20,20) }")
         self.sizegrip.setToolTip("Resize Window")
 
-        # BUTTON CLICK FUNCTIONS
+        # BUTTON CLICKS
+        self.ui.amarillo.clicked.connect(
+            lambda: amarillo.amarillo.getReports())
+        self.ui.austin.clicked.connect(lambda: austin.austin.getReports())
+        self.ui.caddo_mills.clicked.connect(
+            lambda: caddo_mills.caddoMills.getReports())
+        self.ui.dallas.clicked.connect(lambda: dallas.dallas.getReports())
+        self.ui.enid.clicked.connect(lambda: enid.enid.getReports())
+        self.ui.ennis.clicked.connect(lambda: ennis.ennis.getReports())
+        self.ui.hobbs.clicked.connect(lambda: hobbs.hobbs.getReports())
+        self.ui.kaufman.clicked.connect(lambda: kaufman.kaufman.getReports())
+        self.ui.kaufman_2.clicked.connect(
+            lambda: kaufman_2.kaufman2.getReports())
+        self.ui.krum.clicked.connect(lambda: krum.krum.getReports())
+        self.ui.laughlin.clicked.connect(
+            lambda: laughlin.laughlin.getReports())
+        self.ui.lindale.clicked.connect(lambda: lindale.lindale.getReports())
+        self.ui.lubbock.clicked.connect(lambda: lubbock.lubbock.getReports())
+        self.ui.mineola.clicked.connect(lambda: mineola.mineola.getReports())
+        self.ui.mineola_2.clicked.connect(
+            lambda: mineola_2.mineola2.getReports())
+        self.ui.paris.clicked.connect(lambda: paris.paris.getReports())
+        self.ui.seminole.clicked.connect(
+            lambda: seminole.seminole.getReports())
+        self.ui.stillwater.clicked.connect(
+            lambda: stillwater.stillwater.getReports())
+        self.ui.tulsa.clicked.connect(lambda: tulsa.tulsa.getReports())
         self.ui.wichita_falls.clicked.connect(
-            lambda: self.wichita_falls_fun.getReports())
+            lambda: wichita_falls_fun.wichitaFalls.getReports())
 
     ## RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTORED
 

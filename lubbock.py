@@ -11,7 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 
 
-class wichitaFalls():
+class lubbock():
     def getReports():
 
         chrome_options = Options()
@@ -31,6 +31,10 @@ class wichitaFalls():
                     .key_up(Keys.SHIFT) \
                     .perform()
 
+        elif op_sys == 'Windows':
+            os.system('set PATH=%PATH%;D:\chromedriver.exe')
+            os.system('set PATH=%PATH%;E:\chromedriver.exe')
+            os.system('set PATH=%PATH%F:\chromedriver.exe')
         elif op_sys == 'Windows':
             os.system('set PATH=%PATH%;D:\chromedriver.exe')
             os.system('set PATH=%PATH%;E:\chromedriver.exe')
@@ -164,4 +168,4 @@ if __name__ == "__main__":
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
     app = QtWidgets.QApplication(sys.argv)
-    getReports = wichitaFalls.getReports()
+    getReports = lubbock.getReports()

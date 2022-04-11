@@ -11,7 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 
 
-class wichitaFalls():
+class paris():
     def getReports():
 
         chrome_options = Options()
@@ -35,13 +35,17 @@ class wichitaFalls():
             os.system('set PATH=%PATH%;D:\chromedriver.exe')
             os.system('set PATH=%PATH%;E:\chromedriver.exe')
             os.system('set PATH=%PATH%F:\chromedriver.exe')
-            os.system(
-                'set PATH=%PATH%;C:/Users/WichitaFalls/Documents/automation/chromedriver.exe')
-            # executed as a simple script, the driver should be in `PATH`
-            s = Service(
-                executable_path='./chromedriver.exe')
-            driver = webdriver.Chrome(
-                service=s, chrome_options=chrome_options)
+            if getattr(sys, 'frozen', False):
+                # executed as a bundled exe, the driver is in the extracted folder
+                chromedriver_path = os.path.join(
+                    sys._MEIPASS, "chromedriver.exe")
+                driver = webdriver.Chrome(chromedriver_path)
+            else:
+                # executed as a simple script, the driver should be in `PATH`
+                s = Service(
+                    executable_path='./chromedriver.exe')
+                driver = webdriver.Chrome(
+                    service=s, chrome_options=chrome_options)
 
             def open_tab(driver, report):
                 ActionChains(driver) \
@@ -164,4 +168,4 @@ if __name__ == "__main__":
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
     app = QtWidgets.QApplication(sys.argv)
-    getReports = wichitaFalls.getReports()
+    getReports = paris.getReports()

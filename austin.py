@@ -11,7 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 
 
-class wichitaFalls():
+class austin():
     def getReports():
 
         chrome_options = Options()
@@ -164,4 +164,4 @@ if __name__ == "__main__":
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
     app = QtWidgets.QApplication(sys.argv)
-    getReports = wichitaFalls.getReports()
+    getReports = austin.getReports()
