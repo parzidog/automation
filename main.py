@@ -18,7 +18,7 @@ import ui_window_functions
 import wichita_falls_fun
 
 
-class MainWindow(ui_window_functions.QMainWindow, ui_main.Ui_MainWindow, wichita_falls_fun.wichitaFalls):
+class MainWindow(ui_window_functions.QMainWindow, ui_main.Ui_MainWindow):
     def __init__(self):
         ui_window_functions.QMainWindow.__init__(self)
         self.ui = ui_main.Ui_MainWindow()

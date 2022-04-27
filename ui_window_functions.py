@@ -18,6 +18,8 @@ import caddo_mills
 import dallas
 import enid
 import ennis
+import gresham1
+import gresham2
 import hobbs
 import kaufman
 import kaufman_2
@@ -100,33 +102,36 @@ class UIFunctions(QMainWindow):
 
         # BUTTON CLICKS
         self.ui.amarillo.clicked.connect(
-            lambda: amarillo.amarillo.getReports())
-        self.ui.austin.clicked.connect(lambda: austin.austin.getReports())
+            lambda: amarillo.hobbs.getReports())
+        self.ui.austin.clicked.connect(lambda: austin.hobbs.getReports())
         self.ui.caddo_mills.clicked.connect(
-            lambda: caddo_mills.caddoMills.getReports())
-        self.ui.dallas.clicked.connect(lambda: dallas.dallas.getReports())
-        self.ui.enid.clicked.connect(lambda: enid.enid.getReports())
-        self.ui.ennis.clicked.connect(lambda: ennis.ennis.getReports())
+            lambda: caddo_mills.hobbs.getReports())
+        self.ui.dallas.clicked.connect(lambda: dallas.hobbs.getReports())
+        self.ui.enid.clicked.connect(lambda: enid.hobbs.getReports())
+        self.ui.ennis.clicked.connect(lambda: ennis.hobbs.getReports())
+        self.ui.gresham.clicked.connect(lambda: gresham1.hobbs.getReports())
+        self.ui.mineola2.clicked.connect(
+            lambda: gresham2.hobbs.getReports())
         self.ui.hobbs.clicked.connect(lambda: hobbs.hobbs.getReports())
-        self.ui.kaufman.clicked.connect(lambda: kaufman.kaufman.getReports())
-        self.ui.kaufman_2.clicked.connect(
-            lambda: kaufman_2.kaufman2.getReports())
-        self.ui.krum.clicked.connect(lambda: krum.krum.getReports())
+        self.ui.kaufman.clicked.connect(lambda: kaufman.hobbs.getReports())
+        self.ui.kaufman2.clicked.connect(
+            lambda: kaufman_2.hobbs.getReports())
+        self.ui.krum.clicked.connect(lambda: krum.hobbs.getReports())
         self.ui.laughlin.clicked.connect(
-            lambda: laughlin.laughlin.getReports())
-        self.ui.lindale.clicked.connect(lambda: lindale.lindale.getReports())
-        self.ui.lubbock.clicked.connect(lambda: lubbock.lubbock.getReports())
-        self.ui.mineola.clicked.connect(lambda: mineola.mineola.getReports())
-        self.ui.mineola_2.clicked.connect(
-            lambda: mineola_2.mineola2.getReports())
-        self.ui.paris.clicked.connect(lambda: paris.paris.getReports())
-        self.ui.seminole.clicked.connect(
-            lambda: seminole.seminole.getReports())
+            lambda: laughlin.hobbs.getReports())
+        self.ui.lindale.clicked.connect(lambda: lindale.hobbs.getReports())
+        self.ui.lubbock.clicked.connect(lambda: lubbock.hobbs.getReports())
+        self.ui.mineola.clicked.connect(lambda: mineola.hobbs.getReports())
+        self.ui.mineola2.clicked.connect(
+            lambda: mineola_2.hobbs.getReports())
+        self.ui.paris.clicked.connect(lambda: paris.hobbs.getReports())
+        self.ui.hobbs.clicked.connect(
+            lambda: seminole.hobbs.getReports())
         self.ui.stillwater.clicked.connect(
-            lambda: stillwater.stillwater.getReports())
-        self.ui.tulsa.clicked.connect(lambda: tulsa.tulsa.getReports())
+            lambda: stillwater.hobbs.getReports())
+        self.ui.tulsa.clicked.connect(lambda: tulsa.hobbs.getReports())
         self.ui.wichita_falls.clicked.connect(
-            lambda: wichita_falls_fun.wichitaFalls.getReports())
+            lambda: wichita_falls_fun.hobbs.getReports())
 
     ## RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTORED
 
