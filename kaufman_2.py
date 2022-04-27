@@ -11,7 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 
 
-class kaufman2():
+class hobbs():
     def getReports():
 
         chrome_options = Options()
@@ -63,7 +63,7 @@ class kaufman2():
         username.click()
 
         #Enter new username
-        text = "kenneth_wf"
+        text = "tocarro_lions"
         for character in text:
             username.send_keys(character)
             time.sleep(0.1)  # pause for 0.3 seconds("kenneth_wf")
@@ -86,8 +86,14 @@ class kaufman2():
         driver.implicitly_wait(10)
 
         #Collection Worksheet
+        category = driver.find_element(
+            By.XPATH, '//*[@id="tenantsReportsHeading"]/div')
+        category.click()
+
+        driver.implicitly_wait(1)
+
         collectionWorksheet = driver.find_element(
-            By.XPATH, '//*[@id="reportsListWidget"]/div/div[1]/div/ul/li[4]/a')
+            By.LINK_TEXT, 'Collection Worksheet')
 
         open_tab(driver, collectionWorksheet)
 
@@ -115,10 +121,14 @@ class kaufman2():
 
         driver.switch_to.window(driver.window_handles[0])
 
+        category = driver.find_element(
+            By.XPATH, '//*[@id="ratesReportsHeading"]/div')
+        category.click()
+
         driver.implicitly_wait(10)
 
         rateExceptions = driver.find_element(
-            By.XPATH, '//*[@id="reportsListWidget"]/div/div[2]/div[3]/ul/li[1]/a')
+            By.XPATH, '//*[@id="ratesReportsContent"]/div/ul/li[1]/a')
 
         open_tab(driver, rateExceptions)
 
@@ -131,12 +141,17 @@ class kaufman2():
         driver.switch_to.window(driver.window_handles[0])
 
         #Management Summary
+
         driver.switch_to.window(driver.window_handles[0])
+
+        category = driver.find_element(
+            By.XPATH, '//*[@id="financialReportsHeading"]/div')
+        category.click()
 
         driver.implicitly_wait(10)
 
         managementSummary = driver.find_element(
-            By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[8]/a')
+            By.LINK_TEXT, 'Management Summary')
         open_tab(driver, managementSummary)
         driver.implicitly_wait(10)
 
@@ -152,8 +167,9 @@ class kaufman2():
         driver.switch_to.window(driver.window_handles[0])
 
         driver.implicitly_wait(10)
+
         occupancyOverview = driver.find_element(
-            By.XPATH, '//*[@id="reportsListWidget"]/div/div[3]/div[2]/ul/li[11]/a')
+            By.XPATH, '//*[@id="financialReportsContent"]/div/ul/li[11]/a')
         open_tab(driver, occupancyOverview)
 
         driver.switch_to.window(driver.window_handles[4])
@@ -164,4 +180,4 @@ if __name__ == "__main__":
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
     app = QtWidgets.QApplication(sys.argv)
-    getReports = kaufman2.getReports()
+    getReports = hobbs.getReports()
