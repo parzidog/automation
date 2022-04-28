@@ -13,7 +13,7 @@ from PyQt5.QtWidgets import QApplication
 # GUI FILE
 import ui_main
 
-# IMPORT FUNCTIONS
+# IMPORT FUNCTIONSB
 import ui_window_functions
 import wichita_falls_fun
 

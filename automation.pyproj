@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f1cdc001-126a-4683-a58c-e6ece044050b}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>amarillo.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="DJCSAppLogo.ico" />
+    <Content Include="DJCSAppLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="amarillo.py" />
+    <Compile Include="austin.py" />
+    <Compile Include="caddo_mills.py" />
+    <Compile Include="dallas.py" />
+    <Compile Include="enid.py" />
+    <Compile Include="ennis.py" />
+    <Compile Include="gresham1.py" />
+    <Compile Include="gresham2.py" />
+    <Compile Include="hobbs.py" />
+    <Compile Include="kaufman.py" />
+    <Compile Include="kaufman_2.py" />
+    <Compile Include="krum.py" />
+    <Compile Include="laughlin.py" />
+    <Compile Include="lindale.py" />
+    <Compile Include="lubbock.py" />
+    <Compile Include="main.py" />
+    <Compile Include="mineola.py" />
+    <Compile Include="mineola_2.py" />
+    <Compile Include="paris.py" />
+    <Compile Include="seminole.py" />
+    <Compile Include="stillwater.py" />
+    <Compile Include="tulsa.py" />
+    <Compile Include="ui_main.py" />
+    <Compile Include="ui_window_functions.py" />
+    <Compile Include="wichita_falls_fun.py" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

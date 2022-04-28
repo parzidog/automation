@@ -86,14 +86,19 @@ class hobbs():
         #Select Facility
 
         select = driver.find_element(
-            By.XPATH, '//*[@id="ChangeLocation_chosen"]/a/span')
+            By.XPATH, '//*[@id="ChangeLocation_chosen"]')
         select.click()
 
-        clck = Select(driver.find_element(
-            By.XPATH, '//*[@id="ChangeLocation"]'))
-        clck.select_by_value('1036515')
+        inpt = driver.find_element(
+            By.XPATH, '//*[@id="ChangeLocation_chosen"]/div/div/input')
+        inpt.click()
+
+        inpt.send_keys('1036515')
+        inpt.send_keys(Keys.ENTER)
 
         driver.implicitly_wait(10)
+
+        #Reports Section
 
         reports = driver.find_element(By.XPATH, '//*[@id="ctReports"]')
         reports.click()
