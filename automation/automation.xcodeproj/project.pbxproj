@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXFileReference section */
+		F2096C30281A0A6400586C55 /* wichita_falls_fun.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = wichita_falls_fun.py; path = ../wichita_falls_fun.py; sourceTree = "<group>"; };
+		F2096C31281A0A6400586C55 /* laughlin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = laughlin.py; path = ../laughlin.py; sourceTree = "<group>"; };
+		F2096C32281A0A6400586C55 /* main.spec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.spec; path = ../main.spec; sourceTree = "<group>"; };
+		F2096C33281A0A6400586C55 /* dallas.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = dallas.py; path = ../dallas.py; sourceTree = "<group>"; };
+		F2096C34281A0A6400586C55 /* kaufman.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = kaufman.py; path = ../kaufman.py; sourceTree = "<group>"; };
+		F2096C35281A0A6400586C55 /* gresham2.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = gresham2.py; path = ../gresham2.py; sourceTree = "<group>"; };
+		F2096C36281A0A6400586C55 /* chromedriver.exe */ = {isa = PBXFileReference; lastKnownFileType = file; name = chromedriver.exe; path = ../chromedriver.exe; sourceTree = "<group>"; };
+		F2096C37281A0A6400586C55 /* mineola.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = mineola.py; path = ../mineola.py; sourceTree = "<group>"; };
+		F2096C38281A0A6400586C55 /* main.py */ = {isa = PBXFileReference; explicitFileType = text.script.python; fileEncoding = 4; name = main.py; path = ../main.py; sourceTree = "<group>"; };
+		F2096C39281A0A6400586C55 /* krum.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = krum.py; path = ../krum.py; sourceTree = "<group>"; };
+		F2096C3A281A0A6500586C55 /* seminole.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = seminole.py; path = ../seminole.py; sourceTree = "<group>"; };
+		F2096C3B281A0A6500586C55 /* ui_main.ui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ui_main.ui; path = ../ui_main.ui; sourceTree = "<group>"; };
+		F2096C3C281A0A6500586C55 /* austin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = austin.py; path = ../austin.py; sourceTree = "<group>"; };
+		F2096C3D281A0A6500586C55 /* gresham1.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = gresham1.py; path = ../gresham1.py; sourceTree = "<group>"; };
+		F2096C3E281A0A6500586C55 /* tulsa.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = tulsa.py; path = ../tulsa.py; sourceTree = "<group>"; };
+		F2096C3F281A0A6500586C55 /* DJCSAppLogo.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = DJCSAppLogo.ico; path = ../DJCSAppLogo.ico; sourceTree = "<group>"; };
+		F2096C40281A0A6500586C55 /* DJCSAppLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DJCSAppLogo.png; path = ../DJCSAppLogo.png; sourceTree = "<group>"; };
+		F2096C41281A0A6500586C55 /* kaufman_2.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = kaufman_2.py; path = ../kaufman_2.py; sourceTree = "<group>"; };
+		F2096C42281A0A6500586C55 /* ui_window_functions.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = ui_window_functions.py; path = ../ui_window_functions.py; sourceTree = "<group>"; };
+		F2096C43281A0A6500586C55 /* lubbock.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = lubbock.py; path = ../lubbock.py; sourceTree = "<group>"; };
+		F2096C44281A0A6500586C55 /* hobbs.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = hobbs.py; path = ../hobbs.py; sourceTree = "<group>"; };
+		F2096C45281A0A6500586C55 /* lindale.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = lindale.py; path = ../lindale.py; sourceTree = "<group>"; };
+		F2096C46281A0A6500586C55 /* enid.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = enid.py; path = ../enid.py; sourceTree = "<group>"; };
+		F2096C47281A0A6500586C55 /* ui_main.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = ui_main.py; path = ../ui_main.py; sourceTree = "<group>"; };
+		F2096C48281A0A6500586C55 /* stillwater.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = stillwater.py; path = ../stillwater.py; sourceTree = "<group>"; };
+		F2096C49281A0A6500586C55 /* ennis.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = ennis.py; path = ../ennis.py; sourceTree = "<group>"; };
+		F2096C4A281A0A6500586C55 /* paris.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = paris.py; path = ../paris.py; sourceTree = "<group>"; };
+		F2096C4B281A0A6500586C55 /* caddo_mills.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = caddo_mills.py; path = ../caddo_mills.py; sourceTree = "<group>"; };
+		F2096C4C281A0A6500586C55 /* __pycache__ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = __pycache__; path = ../__pycache__; sourceTree = "<group>"; };
+		F2096C4D281A0A6500586C55 /* mineola_2.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = mineola_2.py; path = ../mineola_2.py; sourceTree = "<group>"; };
+		F2096C4E281A0A6500586C55 /* amarillo.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = amarillo.py; path = ../amarillo.py; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		F2096C25281A09E000586C55 = {
+			isa = PBXGroup;
+			children = (
+				F2096C4C281A0A6500586C55 /* __pycache__ */,
+				F2096C4E281A0A6500586C55 /* amarillo.py */,
+				F2096C3C281A0A6500586C55 /* austin.py */,
+				F2096C4B281A0A6500586C55 /* caddo_mills.py */,
+				F2096C36281A0A6400586C55 /* chromedriver.exe */,
+				F2096C33281A0A6400586C55 /* dallas.py */,
+				F2096C3F281A0A6500586C55 /* DJCSAppLogo.ico */,
+				F2096C40281A0A6500586C55 /* DJCSAppLogo.png */,
+				F2096C46281A0A6500586C55 /* enid.py */,
+				F2096C49281A0A6500586C55 /* ennis.py */,
+				F2096C3D281A0A6500586C55 /* gresham1.py */,
+				F2096C35281A0A6400586C55 /* gresham2.py */,
+				F2096C44281A0A6500586C55 /* hobbs.py */,
+				F2096C41281A0A6500586C55 /* kaufman_2.py */,
+				F2096C34281A0A6400586C55 /* kaufman.py */,
+				F2096C39281A0A6400586C55 /* krum.py */,
+				F2096C31281A0A6400586C55 /* laughlin.py */,
+				F2096C45281A0A6500586C55 /* lindale.py */,
+				F2096C43281A0A6500586C55 /* lubbock.py */,
+				F2096C38281A0A6400586C55 /* main.py */,
+				F2096C32281A0A6400586C55 /* main.spec */,
+				F2096C4D281A0A6500586C55 /* mineola_2.py */,
+				F2096C37281A0A6400586C55 /* mineola.py */,
+				F2096C4A281A0A6500586C55 /* paris.py */,
+				F2096C3A281A0A6500586C55 /* seminole.py */,
+				F2096C48281A0A6500586C55 /* stillwater.py */,
+				F2096C3E281A0A6500586C55 /* tulsa.py */,
+				F2096C47281A0A6500586C55 /* ui_main.py */,
+				F2096C3B281A0A6500586C55 /* ui_main.ui */,
+				F2096C42281A0A6500586C55 /* ui_window_functions.py */,
+				F2096C30281A0A6400586C55 /* wichita_falls_fun.py */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		F2096C2A281A09E100586C55 /* automation */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = F2096C2D281A09E100586C55 /* Build configuration list for PBXLegacyTarget "automation" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/python;
+			dependencies = (
+			);
+			name = automation;
+			passBuildSettingsInEnvironment = 1;
+			productName = automation;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		F2096C26281A09E000586C55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					F2096C2A281A09E100586C55 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = F2096C29281A09E000586C55 /* Build configuration list for PBXProject "automation" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2096C25281A09E000586C55;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2096C2A281A09E100586C55 /* automation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		F2096C2B281A09E100586C55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		F2096C2C281A09E100586C55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+			};
+			name = Release;
+		};
+		F2096C2E281A09E100586C55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4F48X9W8Q8;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F2096C2F281A09E100586C55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4F48X9W8Q8;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2096C29281A09E000586C55 /* Build configuration list for PBXProject "automation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2096C2B281A09E100586C55 /* Debug */,
+				F2096C2C281A09E100586C55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2096C2D281A09E100586C55 /* Build configuration list for PBXLegacyTarget "automation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2096C2E281A09E100586C55 /* Debug */,
+				F2096C2F281A09E100586C55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2096C26281A09E000586C55 /* Project object */;
+}

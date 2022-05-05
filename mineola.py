@@ -1,8 +1,8 @@
 import time
 import os
 import platform
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QMainWindow
+from pyqt5 import QtWidgets
+from pyqt5.QtWidgets import QMainWindow
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
