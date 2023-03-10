@@ -12,7 +12,7 @@ from selenium.webdriver.chrome.options import Options
 
 
 class hobbs():
-    def getReports():
+    def getReports(facility):
 
         chrome_options = Options()
         chrome_options.add_experimental_option("detach", True)
@@ -62,17 +62,17 @@ class hobbs():
         username = driver.find_element(By.XPATH, '//*[@id="userName"]')
         username.click()
 
-        #Enter username
-        text = "swirlcake_planes"
+        #Enter new username
+        text = facility.username
         for character in text:
             username.send_keys(character)
-            time.sleep(0.1)  # pause for 0.3 seconds
+            time.sleep(0.1)  # pause for 0.3 seconds("kenneth_wf")
         driver.implicitly_wait(10)
         password = driver.find_element(By.XPATH, '//*[@id="Password"]')
         password.click()
 
-        #Enter password
-        text = "Storage1!"
+        #Enter new password
+        text = facility.password
         for character in text:
             password.send_keys(character)
             time.sleep(0.1)  # pause for 0.3 seconds

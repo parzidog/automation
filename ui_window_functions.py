@@ -12,28 +12,8 @@ from PyQt5.QtCore import Qt
 
 # GUI FILE
 import ui_main
-import amarillo
-import austin
-import caddo_mills
-import dallas
-import enid
-import ennis
-import gresham1
-import gresham2
-import hobbs
-import kaufman
-import kaufman_2
-import krum
-import laughlin
-import lindale
-import lubbock
-import mineola
-import mineola_2
-import paris
-import seminole
-import stillwater
-import tulsa
-import wichita_falls_fun
+import data
+import get_reports
 
 # GLOBALS
 GLOBAL_STATE = 0
@@ -69,6 +49,7 @@ class UIFunctions(QMainWindow):
 
     # UI DEFINITIONS
     def uiDefinitions(self):
+        facility = data.facilities;
 
         # REMOVE TITLE BAR
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
@@ -102,36 +83,35 @@ class UIFunctions(QMainWindow):
 
         # BUTTON CLICKS
         self.ui.amarillo.clicked.connect(
-            lambda: amarillo.hobbs.getReports())
-        self.ui.austin.clicked.connect(lambda: austin.hobbs.getReports())
+            lambda: get_reports.getReports(facility.amarillo))
+        self.ui.austin.clicked.connect(lambda: get_reports.getReports(facility.austin))
         self.ui.caddo_mills.clicked.connect(
-            lambda: caddo_mills.hobbs.getReports())
-        self.ui.dallas.clicked.connect(lambda: dallas.hobbs.getReports())
-        self.ui.enid.clicked.connect(lambda: enid.hobbs.getReports())
-        self.ui.ennis.clicked.connect(lambda: ennis.hobbs.getReports())
-        self.ui.gresham.clicked.connect(lambda: gresham1.hobbs.getReports())
-        self.ui.mineola2.clicked.connect(
-            lambda: gresham2.hobbs.getReports())
-        self.ui.hobbs.clicked.connect(lambda: hobbs.hobbs.getReports())
-        self.ui.kaufman.clicked.connect(lambda: kaufman.hobbs.getReports())
+            lambda: get_reports.getReports(facility.caddo_mills))
+        self.ui.dallas.clicked.connect(lambda: get_reports.getReports(facility.dallas))
+        self.ui.enid.clicked.connect(lambda: get_reports.getReports(facility.enid))
+        self.ui.ennis.clicked.connect(lambda: get_reports.getReports(facility.ennis))
+        self.ui.gresham1.clicked.connect(lambda: get_reports.getReports(facility.gresham1))
+        self.ui.gresham2.clicked.connect(lambda: get_reports.getReports(facility.gresham2))
+        self.ui.hobbs.clicked.connect(lambda: get_reports.getReports(facility.hobbs))
+        self.ui.kaufman.clicked.connect(lambda: get_reports.getReports(facility.kaufman))
         self.ui.kaufman2.clicked.connect(
-            lambda: kaufman_2.hobbs.getReports())
-        self.ui.krum.clicked.connect(lambda: krum.hobbs.getReports())
+            lambda: get_reports.getReports(facility.kaufman2))
+        self.ui.krum.clicked.connect(lambda: get_reports.getReports(facility.krum))
         self.ui.laughlin.clicked.connect(
-            lambda: laughlin.hobbs.getReports())
-        self.ui.lindale.clicked.connect(lambda: lindale.hobbs.getReports())
-        self.ui.lubbock.clicked.connect(lambda: lubbock.hobbs.getReports())
-        self.ui.mineola.clicked.connect(lambda: mineola.hobbs.getReports())
+            lambda: get_reports.getReports(facility.laughlin))
+        self.ui.lindale.clicked.connect(lambda: get_reports.getReports(facility.lindale))
+        self.ui.lubbock.clicked.connect(lambda: get_reports.getReports(facility.lubbock))
+        self.ui.mineola.clicked.connect(lambda: get_reports.getReports(facility.mineola))
         self.ui.mineola2.clicked.connect(
-            lambda: mineola_2.hobbs.getReports())
-        self.ui.paris.clicked.connect(lambda: paris.hobbs.getReports())
-        self.ui.hobbs.clicked.connect(
-            lambda: seminole.hobbs.getReports())
+            lambda: get_reports.getReports(facility.mineola2))
+        self.ui.paris.clicked.connect(lambda: get_reports.getReports(facility.paris))
+        self.ui.seminole.clicked.connect(
+            lambda: get_reports.getReports(facility.seminole))
         self.ui.stillwater.clicked.connect(
-            lambda: stillwater.hobbs.getReports())
-        self.ui.tulsa.clicked.connect(lambda: tulsa.hobbs.getReports())
+            lambda: get_reports.getReports())
+        self.ui.tulsa.clicked.connect(lambda: get_reports.getReports(facility.tulsa))
         self.ui.wichita_falls.clicked.connect(
-            lambda: wichita_falls_fun.hobbs.getReports())
+            lambda: get_reports.getReports(facility.wichita_falls))
 
     ## RETURN STATUS IF WINDOWS IS MAXIMIZE OR RESTORED
 

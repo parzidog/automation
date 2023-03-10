@@ -19,7 +19,7 @@ facilities = {
     username: 'swirlcake_45',
     password: 'Storage5!',
   },
-  ennis: {
+  'ennis': {
     username: 'swirlcake_45',
     password: 'Storage5!',
   },
@@ -63,7 +63,7 @@ facilities = {
     username: 'swirlcake_45',
     password: 'Storage5!',
   },
-  'mineola_2': {
+  'mineola2': {
     username: 'swirlcake_45',
     password: 'Storage5!',
   },
